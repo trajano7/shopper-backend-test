@@ -8,10 +8,11 @@ dotenv.config();
 // Connects to the database
 async function connectToDb() {
   const connection = await mysql.createConnection({
-    host: process.env.DB_HOST,
-    user: process.env.DB_USER,
-    database: process.env.DB_NAME,
-    password: process.env.DB_PASSWORD,
+    host: 'db',
+    user: 'user_db',
+    database: 'measures_db',
+    password: '123',
+    port: 3306
   });
   return connection;
 }

@@ -10,7 +10,7 @@ const measuresRoutes = require('./routes/measures');
 const imagesRoutes = require('./routes/images');
 
 const app = express();
-const port = process.env.PORT || 8080;
+const port = 3000;
 
 app.use(bodyParser.json());
 app.use((req, res, next) => {
@@ -22,7 +22,7 @@ app.use((req, res, next) => {
 app.use(measuresRoutes);
 app.use(imagesRoutes);
 
-app.use((error: Error, req: Request, res: Response): void => {
+app.use((error: Error, req: Request, res: Response, next: NextFunction): void => {
   if (error instanceof CustomError) { 
     const status = (error as CustomError).error_status || 500;
     res.status(status).json((error as CustomError).toJSON());

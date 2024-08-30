@@ -1,5 +1,5 @@
-CREATE DATABASE IF NOT EXISTS measures_db;
-USE measures_db;
+-- CREATE DATABASE IF NOT EXISTS measures_db;
+-- USE measures_db;
 
 CREATE Table IF NOT EXISTS User (
     customer_code VARCHAR(36) PRIMARY KEY
